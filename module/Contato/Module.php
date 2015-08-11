@@ -4,9 +4,18 @@
  */
 namespace Contato;
 
+/*use Zend\Mvc\ModuleRouteListener;
+use Zend\Mvc\MvcEvent;*/
+
 
 class Module
 {
+/*    public function onBootstrap(MvcEvent $e)
+    {
+        $eventManager        = $e->getApplication()->getEventManager();
+        $moduleRouteListener = new ModuleRouteListener();
+        $moduleRouteListener->attach($eventManager);
+    }*/
     /**
      * include de arquivo para outras configuracoes desse modulo
      */
@@ -21,7 +30,7 @@ class Module
     public function getAutoloaderConfig()
     {
         return array(
-            'ZendLoaderStandardAutoloader' => array(
+            'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ),
