@@ -1,9 +1,10 @@
-    <?php
+<?php
 /**
  * namespace para nosso modulo contato
  */
 namespace Contato;
- 
+
+
 class Module
 {
     /**
