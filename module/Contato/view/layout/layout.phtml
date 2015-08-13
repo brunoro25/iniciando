@@ -37,12 +37,22 @@
         <div class="container">
             <div class="header">
                 <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="<?php echo $this->url('home', array( 'action' => 'home' )); ?>  ">Início</a></li>
-                    <li><a href="<?php echo $this->url('sobre', array( 'action' => 'sobre' )); ?>">Sobre</a></li>
+                    <?php
+                    $url_home   = $this->url('home');
+                    $url_sobre  = $this->url('sobre');
+                    ?>
+                    <li <?php echo $this->menuAtivo($url_home); ?>>
+                        <a href="<?php echo $url_home; ?>">Início</a>
+                    </li>
+                    <li <?php echo $this->menuAtivo($url_sobre); ?>>
+                        <a href="<?php echo $url_sobre; ?>">Sobre</a>
+                    </li>
                 </ul>
                 <h3 class="text-muted"><?php echo $NAME_APPLICATION; ?></h3>
             </div>
- 
+
+            <?php echo $this->message(); ?>
+
             <div class="row marketing">
                 <?php echo $this->content; ?>
             </div>
@@ -52,17 +62,18 @@
                 <p class="muted credit pull-right">Desenvolvido por <a href="http://igorrocha.com.br">Igor Rocha</a>.</p>
             </div>
         </div>
- 
+
         <!-- Scripts -->
         <?php
         echo $this
-                ->headScript()
-                ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-                ->prependFile($this->basePath() . '/js/jquery.min.js')
-                ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-                ->prependFile($this->basePath() . '/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->headScript()
+            ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath() . '/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath() . '/js/scripts.js')
+            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+            ->prependFile($this->basePath() . '/js/jquery.min.js')
         ;
- 
+
         echo $this->inlineScript();
         ?>
     </body>
