@@ -19,7 +19,7 @@ return array(
                 'options'   => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'HomeController',
+                        'controller' => 'ContatosController',
                         'action'     => 'index',
                     ),
                 ),
@@ -31,7 +31,7 @@ return array(
                 'options'   => array(
                     'route'    => '/sobre',
                     'defaults' => array(
-                        'controller' => 'HomeController',
+                        'controller' => 'ContatosController',
                         'action'     => 'sobre',
                     ),
                 ),

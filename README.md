@@ -116,3 +116,5 @@ it should look something like below:
     }
 
 Restart the nginx, now you should be ready to go!
+
+http://igorrocha.com.br/tutorial-zf2-parte-7-db-models-e-zend-developer-tools/5/
