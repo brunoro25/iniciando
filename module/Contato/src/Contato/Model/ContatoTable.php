@@ -4,8 +4,8 @@
 namespace Contato\Model;
 
 // import ZendDb
-use Zend\Db\Adapter\Adapter,
-    Zend\Db\ResultSet\ResultSet,
+use //Zend\Db\Adapter\Adapter,
+    //Zend\Db\ResultSet\ResultSet,
     Zend\Db\TableGateway\TableGateway;
 
 class ContatoTable
@@ -13,16 +13,13 @@ class ContatoTable
     protected $tableGateway;
 
     /**
-     * Contrutor com dependencia do Adapter do Banco
-     *
-     * @param Adapter $adapter
+     * Contrutor com dependencia da classe TableGateway
+     * 
+     * @param TableGateway $tableGateway
      */
-    public function __construct(Adapter $adapter)
+    public function __construct(TableGateway $tableGateway)
     {
-        $resultSetPrototype = new ResultSet();
-        $resultSetPrototype->setArrayObjectPrototype(new Contato());
-
-        $this->tableGateway = new TableGateway('contatos', $adapter, null, $resultSetPrototype);
+        $this->tableGateway = $tableGateway;
     }
 
     /**
