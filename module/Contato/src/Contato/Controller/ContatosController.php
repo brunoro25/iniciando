@@ -10,6 +10,9 @@ use Zend\Mvc\Controller\AbstractActionController;
  
 // import ZendView
 use Zend\View\Model\ViewModel;
+
+// import ContatoForm
+use Contato\Form\ContatoForm;
  
 class ContatosController extends AbstractActionController
 {
@@ -25,8 +28,9 @@ class ContatosController extends AbstractActionController
     // GET /contatos/novo
     public function novoAction()
     {
+        return ['formContato' => new ContatoForm()];
     }
- 
+
     // POST /contatos/adicionar
     public function adicionarAction()
     {
